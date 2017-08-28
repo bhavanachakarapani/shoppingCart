@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shopping Cart</title>
+<script type = "text/javaScript"></script>
+
+</head>
+<body>
+
+<table style = "width:100%">
+<tr>
+	<th>Image</th>
+  <th>Name</th>
+  <th>Price</th>
+  <th>Add to Cart</th>
+</tr> 
+  <script> 
+  
+      var cart = [{"Image":"honor.jpg", "Name":"Huawie Honor 6x", "Price":200},{"Image":"http://www.three.co.uk/static/images/device_pages/MobileVersion/Apple/iPhone_7_Plus/Red/desktop/1.jpg", "Name":"iphone7", "Price":2000}];
+      
+         for (var i = 0; i < cart.length; i++) 
+         {
+         
+           document.write("<tr><td><img src ="+cart[i].Image+" width='60'/></td>");
+         	 document.write("<td>"  +cart[i].Name+"</td>");
+           document.write("<td>"  +cart[i].Price+"</td>");
+           document.write("<td><button id='a' onclick='returnData();'>add to cart</button></td></tr>");
+
+         }
+
+           //document.write("<button onclick='window.location ='file:///home/garima/Documents/javascript-task/link.html''><p style='text-align:center' 'margin-top:80' 'margin-bottom:20' 'margin-left:50' 'margin-right:50'>Submit</p></button>");
+
+
+        // function showCart()
+        //   { 
+        //     document.write("<table width = '100%'><tr><th>Image</th><th>Name</th><th>Price</th>");
+        //     for (var i = 0 ; i < cart.length; i++) 
+        //  {
+        //    var x =[cart[i]];
+        //    document.write("<tr><td><img src ="+x[i].Image+" width='60'/></td>");
+        //    document.write("<td>"  +x[i].Name+"</td>");
+        //    document.write("<td>"  +x[i].Price+"</td></tr>");
+        //   }
+            
+        //     document.write("</table>");
+        //   } 
+        function saveCart()
+         {
+      
+          if (localStorage.cart)  
+         {
+          //   var item = cart.slice();
+          var item = [cart[i]]; 
+          // var item = localStorage.cart;
+          item.push('cart[i]'); 
+          }
+          
+          }
+        
+        function returnData()
+        {
+          document.getElementById('a').onclick = saveCart();
+        }
+            
+          function showCart()
+          { 
+            document.write("<table width = '100%'><tr><th>Image</th><th>Name</th><th>Price</th>");
+            for (var i = 0 ; i < cart.length; i++) 
+         {
+           var x =[cart[i]];
+           document.write("<tr><td><img src ="+x[i].Image+" width='60'/></td>");
+           document.write("<td>"  +x[i].Name+"</td>");
+           document.write("<td>"  +x[i].Price+"</td></tr>");
+          }
+            
+            document.write("</table>");
+          } 
+      
+       document.write("<button onclick='showCart();'><p style='text-align:center' 'margin-top:80' 'margin-bottom:20' 'margin-left:50' 'margin-right:50'>submit</p></button>");
+     
+
+  </script>
+</table>
+
+
+</body>
+</html>
